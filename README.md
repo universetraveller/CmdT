@@ -8,7 +8,7 @@ When I have used Linux, I found the termianl and vim is excellent for works. So 
 Now the demoversion of CmdT is v1.0.0 and its runtime should be Windows for its implementation.  
 In the later ver it may support more features for its structure is easy to add extensions.   
 Other OS such as Linux has have well-established command-line/shell/terminal based tools and it is also the inspiration of this tool.  
-The existing version (v1.0.0) includes 5 tools:  
+#### The existing version (v1.0.0) includes 5 tools:  
 * Command line text editor: It is a vim like text editor, but its functions are more simple and only support simply edit now.  
 * Translator: Online ver and offline ver. The Online ver uses APIs to translate and the offline ver uses hash-map-dictionary to implement. (only English to Chinese offline now)  
 * Private Diary: Encrypted text diary, based on users name and password. Without password, the text would be garbled code.  
