@@ -30,7 +30,7 @@ Other OS such as Linux has have well-established command-line/shell/terminal bas
 └── README.md
 ```
 # To get CmdT  
-## Download in the release: https://github.com/universetraveller/CmdT/releases/tag/v1.0.0  
+## Download in the release: https://github.com/universetraveller/CmdT/releases/
 If you want to use CmdT, please download `ct-master.zip` and unzip it in a folder you like, then run `SetEv.exe` to set the environment variable. If successfully, you can use CmdT anywhere in terminal by `ct <parameter>`.  
 If you just want a demo use, please download `Release_noEv.zip`. It would not require setting environment variable, but you should enter the unzip-folder by `cd /d path2folder` to use it.  
 ### Environment variable setting:  
@@ -61,6 +61,7 @@ The editor support 3 modes and 2 commands now, which are the simplified ver of v
 > Also, for I do not set the buffer and terminal size, when the terminal window's size is changed, the editor does not refresh the size of itself but maintains the original size.  
 ## Translator  
 usage: `ct --ts <text>` or `ct -t <text>` with online mode, `ct --dic <text>` or `ct -T <text>` with offline mode.  
+v1.0.2: `ct --dic` or `ct -D` to get constant offline translation.  
 If your computer has no internet-connection, the online mode would switch to offline automatically.  
 Notice that the offline mode only support English to Chinese and single word.  
 Use `/exit` and `/clear` in the offline mode to control the screen buffer.  
