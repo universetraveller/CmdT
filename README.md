@@ -78,10 +78,12 @@ Before you run it, create "A.csv" and "B.csv" and save your matrix by columns(no
 It is just a feature for funny, may be you also need to use it in Linux, but this tool does not support Linux.  
 Not only that, the .csv would get 10GB when you successfully run it, but the most of time it consume is used on IO (may be 10min), then the main step to crush matrix only consumes 0.0003s(I only use it as middle layer, and do not write and read files), but it occupies near 10GB Gpus memory.  
 how funny it is, so do not try to run it unless you really need it.   
+
 ---  
 # To build CmdT  
 Just download the ./src/source and ./src/lib and compile it with CMakeList file.  
 If you want to edit the source code, additionally download the ./src/include which includes header files.  
+
 ---  
 # Test environment  
 I just test this tool in my computer, and the follow is my environment:  
