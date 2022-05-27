@@ -9,7 +9,8 @@ Dictionary::Dictionary() {
     //initialize the library
     printf("Initializing Dictionary...");
     std::ifstream dictionary;
-    dictionary.open("EnWords.csv");
+    std::string path2csv=GetPath()+"EnWords.csv";
+    dictionary.open(path2csv);
     if(!dictionary.is_open()){
         std::cerr<<"open file error"<<"\n";
     }
@@ -35,6 +36,8 @@ Dictionary::Dictionary() {
 void Dictionary::Run() {
     std::string waiting;
     printf(CSI "?1049h");
+    std::cout<<CSI"1;1H";
+    std::cout<<"Offline Mode, key in /exit to exit."<<std::endl;
     while (true){
         std::cin>>waiting;
         if(waiting=="/exit"){

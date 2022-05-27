@@ -286,6 +286,7 @@ bool GetWinget(){
     int pe=0;
     while(pe<101){
         std::cout<<pe<<"/100"<<CSI"u";
+        pe++;
     }
     std::cout<<CSI"0m";
     printf(ESC "[ ? 25 h");
@@ -296,4 +297,12 @@ bool GetWinget(){
     //call the installer
     system(temp.c_str());
     return true;
+}
+std::string GetPath(){
+    wchar_t temp[MAX_PATH];
+    GetModuleFileNameW(NULL, temp, MAX_PATH);
+    std::wstring wstr(temp);
+    std::string cstr(wstr.begin(), wstr.end());
+    auto len=cstr.find_last_of("\\");
+    return cstr.substr(0, len+1);
 }

@@ -5,7 +5,7 @@ PDiary::PDiary() {
 }
 bool PDiary::is_user(const std::string & name) {
     std::ifstream ifi;
-    ifi.open("users.txt");
+    ifi.open(GetPath()+"users.txt");
     if(!ifi.is_open()){
         std::cerr<<"Users file error";
     }
@@ -20,12 +20,12 @@ bool PDiary::is_user(const std::string & name) {
     return false;
 }
 bool PDiary::InitUser(const std::string & name, const std::string &pwd) {
-    std::string command="echo. > "+name+".txt";
+    std::string command="echo. > "+GetPath()+name+".txt";
     system(command.c_str());
     //Default
     command= pwd+"\nUser: "+name+"\n";
     std::ofstream ofs;
-    ofs.open("users.txt",std::ios::app);
+    ofs.open(GetPath()+"users.txt",std::ios::app);
     if(ofs.is_open()){
         ofs<<name<<"\n";
     }else{
@@ -33,7 +33,7 @@ bool PDiary::InitUser(const std::string & name, const std::string &pwd) {
         return false;
     }
     ofs.close();
-    ofs.open(name+".txt");
+    ofs.open(GetPath()+name+".txt");
     if(!ofs.is_open()){
         std::cerr<<"Open error";
         return false;
@@ -43,7 +43,7 @@ bool PDiary::InitUser(const std::string & name, const std::string &pwd) {
     return true;
 }
 bool PDiary::Init(const std::string &name, const std::string &pwd) {
-    std::ifstream input(name+".txt");
+    std::ifstream input(GetPath()+name+".txt");
     std::string data((std::istreambuf_iterator<char>(input)), std::istreambuf_iterator<char>());
     input.close();
     file_data_=std::move(data);
@@ -60,6 +60,7 @@ bool PDiary::Run() {
     std::string t1;
     SetConsoleOutputCP(65001);
     printf(CSI "?1049h");
+    printf(CSI"1;1H");
     std::cout<<"Please key in a command"<<std::endl;
     std::cin>>temp;
     if(temp=="/exit"){
@@ -114,7 +115,7 @@ bool PDiary::Run() {
                 continue;
             }
         }
-        std::ofstream oput(temp+".txt");
+        std::ofstream oput(GetPath()+temp+".txt");
         file_data_="";
         for(auto & i : file_line_){
             file_data_+=i;

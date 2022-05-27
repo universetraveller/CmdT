@@ -2,7 +2,7 @@
 #include "Editor.h"
 #include "Dictionary.h"
 #include "PDiary.h"
-#define __VERSIONofCT__ "1.0.0"
+#define __VERSIONofCT__ "1.0.2"
 int main(int argc, char *argv[]) {
     //specify command flags
     cmdline::parser cts;
@@ -10,7 +10,8 @@ int main(int argc, char *argv[]) {
     cts.add("help",'\0',"Print help information.");
     cts.add<std::string>("ed",'e',"Run the CmdEditor.", false);
     cts.add<std::string>("ts",'t',"Run the translator", false);
-    cts.add<std::string>("dic",'T',"Dictionary", false);
+    cts.add<std::string>("dts",'T',"Dictionary", false);
+    cts.add("dic",'D',"offline dictionary");
     cts.add("diary",'d',"Call the Private Diary");
     //Does not have enough resource to build a packages-manager, so use winget to do it.
     cts.add<std::string>("install",'I',"call the installer", false);
@@ -126,7 +127,8 @@ int main(int argc, char *argv[]) {
             //initialize the library
             printf("Initializing Dictionary...");
             std::ifstream dictionary;
-            dictionary.open("EnWords.csv");
+            std::string path2csv=GetPath()+"EnWords.csv";
+            dictionary.open(path2csv);
             if(!dictionary.is_open()){
                 std::cerr<<"open file error"<<"\n";
             }
@@ -170,12 +172,17 @@ int main(int argc, char *argv[]) {
         }
     }
     //offline dictionary
+    if(cts.exist("dts")){
+        Dictionary dic;
+        SetConsoleOutputCP(65001);
+        std::cout<<dic.Search(cts.get<std::string>("dts"))<<std::endl;
+        printf(CSI"33m--------------------");
+        printf(CSI"0m\n");
+    }
     if(cts.exist("dic")){
         Dictionary dic;
         SetConsoleOutputCP(65001);
-        std::cout<<dic.Search(cts.get<std::string>("dic"))<<std::endl;
-        printf(CSI"33m--------------------");
-        printf(CSI"0m\n");
+        dic.Run();
     }
     //Private Diary
     if(cts.exist("diary")){
