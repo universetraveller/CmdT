@@ -80,6 +80,7 @@ If you have no Winget in your computer, it will install one.
 So, it is better to use winget for its more and more functions...  
 ## Crush Matrix  
 It is just a test, `ct -mtx` or `ct -m` to run it.  
+Default setting is the multiplation of two 24000 dimensions matrix.   
 Before you run it, create "A.csv" and "B.csv" and save your matrix by columns(not row!) and create a new file "result.csv"  
 It is just a feature for funny, may be you also need to use it in Linux, but this tool does not support Linux.  
 Not only that, the .csv would get 10GB when you successfully run it, but the most of time it consume is used on IO (may be 10min), then the main step to crush matrix only consumes 0.0003s(I only use it as middle layer, and do not write and read files), but it occupies near 10GB Gpus memory.  
