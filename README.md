@@ -37,12 +37,12 @@ Use `./` as your unzip folder in the following.
 ---  
 # To Run CmdT  
 #### While you have installed ct, use it as following.  
-### Basis  
+## Basis  
 * key in `ct <command> <parameters>` to use it.  
 * `<command>` includes `--<long cmd>` and `-<short cmd>`, notice the counts of "-" before it.  
 * `ct --version` or `ct -V` to check the version.  
 *  `ct` or `ct --help` to get help information.  
-### Text Editor  
+## Text Editor  
 usage: `ct --ed <textfile>` or `ct -e <textfile>`  
 Example: `ct -e exam.txt`
 then you will enter the editor.  
@@ -55,11 +55,11 @@ The editor support 3 modes and 2 commands now, which are the simplified ver of v
 > the editor does not support Syntax-highligh now for its substrate structure, if want to a syntax highlight demo, define __HIGHLIGHT__ in Editor.cpp (also have bug)  
 > the cursor would get incorrect moving when the text includes full-angle characters for its implementation default is the chars are single byte.  
 > Notice that the Chinese text must be UTF-8 rather than ANSI  
-### Translator  
+## Translator  
 usage: `ct --ts <text>` or `ct -t <text>` with online mode, `ct --dic <text>` or `ct -T <text>` with offline mode.  
 If your computer has no internet-connection, the online mode would switch to offline automatically.  
 Notice that the offline mode only support English to Chinese and single word.  
-### Private Diary  
+## Private Diary  
 usage: `ct --diary` or `ct -d` to enter this mode, then follow the guidance in the screen.  
 If you do not have your private user account, it will create one for you.  
 If you have one, it will ask you to key in your password.  
@@ -68,18 +68,18 @@ You could only edit single line once now(in this version), and there are 3 comma
 * add to add a line  
 * del/delete to delete a line  
 * rw/rewrite to rewrite a line  
-### Packages manager  
+## Packages manager  
 usage: `ct --list/-l` to list your applications, `ct --install/-I <package>` to install, `ct --uninstall/-U <package>` to uninstall.  
 If you have no Winget in your computer, it will install one.  
 So, it is better to use winget for its more and more functions...  
-### Crush Matrix  
+## Crush Matrix  
 It is just a test, `ct -mtx` or `ct -m` to run it.  
 Before you run it, create "A.csv" and "B.csv" and save your matrix by columns(not row!) and create a new file "result.csv"  
 It is just a feature for funny, may be you also need to use it in Linux, but this tool does not support Linux.  
 Not only that, the .csv would get 10GB when you successfully run it, but the most of time it consume is used on IO (may be 10min), then the main step to crush matrix only consumes 0.0003s(I only use it as middle layer, and do not write and read files), but it occupies near 10GB Gpus memory.  
-how funny it is, so do not try to run it unless you really need it.  
+how funny it is, so do not try to run it unless you really need it.   
 ---  
-# To build CmdT
+# To build CmdT  
 Just download the ./src/source and ./src/lib and compile it with CMakeList file.  
 If you want to edit the source code, additionally download the ./src/include which includes header files.  
 ---  
