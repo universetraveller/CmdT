@@ -1,5 +1,6 @@
-# CmdT: A Commandline Based Tools Set
-A method  of the implementation for a simple set  of command line based tools
+# CmdT: A Commandline Based Tools Set  
+A method  of the implementation for a simple set  of command line based tools  
+
 ---
 # Profile
 CmdT is a command-line based tool set which contains 4 tools and an adiitional test function.  
