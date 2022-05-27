@@ -1,11 +1,12 @@
 # CmdT: A Commandline Based Tools Set  
-A method  of the implementation for a simple set  of command line based tools  
+A method  of the implementation for a simple scalable set  of command line based tools  
 
 ---
 # Profile
 CmdT is a command-line based tool set which contains 4 tools and an adiitional test function.  
 When I have used Linux, I found the termianl and vim is excellent for works. So I try to code a similar tools set in windows and add some useful features.  
 Now the demoversion of CmdT is v1.0.0 and its runtime should be Windows for its implementation.  
+In the later ver it may support more features for its structure is easy to add extensions.   
 Other OS such as Linux has have well-established command-line/shell/terminal based tools and it is also the inspiration of this tool.  
 The existing version (v1.0.0) includes 5 tools:  
 * Command line text editor: It is a vim like text editor, but its functions are more simple and only support simply edit now.  
