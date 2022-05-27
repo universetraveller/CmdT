@@ -44,4 +44,5 @@ bool is_connected();
 LPCWSTR String2LPCWSTR(const std::string&);
 bool ExistWinget();
 bool GetWinget();
+std::string GetPath();
 #endif //CT_DEPENDS_H
