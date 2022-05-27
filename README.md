@@ -29,8 +29,8 @@ The existing version (v1.0.0) includes 5 tools:
 ```
 # To get CmdT  
 ## Download in the release: https://github.com/universetraveller/CmdT/releases/tag/v1.0.0  
-### If you want to use CmdT, please download `ct-master.zip` and unzip it in a folder you like, then run `SetEv.exe` to set the environment variable. If successfully, you can use CmdT anywhere in terminal by `ct <parameter>`.  
-#### If you just want a demo use, please download `Release_noEv.zip`. It would not require setting environment variable, but you should enter the unzip-folder by `cd /d path2folder` to use it.  
+If you want to use CmdT, please download `ct-master.zip` and unzip it in a folder you like, then run `SetEv.exe` to set the environment variable. If successfully, you can use CmdT anywhere in terminal by `ct <parameter>`.  
+If you just want a demo use, please download `Release_noEv.zip`. It would not require setting environment variable, but you should enter the unzip-folder by `cd /d path2folder` to use it.  
 #### Environment variable setting:  
 Use `./` as your unzip folder in the following.  
 * add `./bin` and `./lib` to PATH; recommand to add in users' PATH rather than system's PATH.  
@@ -48,13 +48,13 @@ Example: `ct -e exam.txt`
 then you will enter the editor.  
 The operations of the editor are similar to Vim.  
 The editor support 3 modes and 2 commands now, which are the simplified ver of vim.  
-In the Read-Only mode, you could use "hjkl" to control the cursor, which represents "left, down, up, right".  
-key in "i" to get insert mode and edit the text, key in "Esc" to exit the insert mode.  
-input ":" to key in command, now the editor supports 2 commadns: w(save), q(quit); you can combine them when input.  
-Existing bugs:  
-the editor does not support Syntax-highligh now for its substrate structure, if want to a syntax highlight demo, define __HIGHLIGHT__ in Editor.cpp (also have bug)  
-the cursor would get incorrect moving when the text includes full-angle characters for its implementation default is the chars are single byte.  
-Notice that the Chinese text must be UTF-8 rather than ANSI  
+* In the Read-Only mode, you could use "hjkl" to control the cursor, which represents "left, down, up, right".  
+* key in "i" to get insert mode and edit the text, key in "Esc" to exit the insert mode.  
+* input ":" to key in command, now the editor supports 2 commadns: w(save), q(quit); you can combine them when input.  
+> Existing bugs:  
+> the editor does not support Syntax-highligh now for its substrate structure, if want to a syntax highlight demo, define __HIGHLIGHT__ in Editor.cpp (also have bug)  
+> the cursor would get incorrect moving when the text includes full-angle characters for its implementation default is the chars are single byte.  
+> Notice that the Chinese text must be UTF-8 rather than ANSI  
 ### Translator  
 usage: `ct --ts <text>` or `ct -t <text>` with online mode, `ct --dic <text>` or `ct -T <text>` with offline mode.  
 If your computer has no internet-connection, the online mode would switch to offline automatically.  
@@ -72,11 +72,11 @@ You could only edit single line once now(in this version), and there are 3 comma
 usage: `ct --list/-l` to list your applications, `ct --install/-I <package>` to install, `ct --uninstall/-U <package>` to uninstall.  
 If you have no Winget in your computer, it will install one.  
 So, it is better to use winget for its more and more functions...  
-### Crush Matrix
+### Crush Matrix  
 It is just a test, `ct -mtx` or `ct -m` to run it.  
 Before you run it, create "A.csv" and "B.csv" and save your matrix by columns(not row!) and create a new file "result.csv"  
 It is just a feature for funny, may be you also need to use it in Linux, but this tool does not support Linux.  
-Not only that, the .csv would get 10GB when you successfully run it, but the most of time it consume is used on IO (may be 10min), then the main step to crush matrix only consumes 0.0003s(I only use it as middle layer, and do not write and read files), but it occupies near 10GB Gpus memory. 
+Not only that, the .csv would get 10GB when you successfully run it, but the most of time it consume is used on IO (may be 10min), then the main step to crush matrix only consumes 0.0003s(I only use it as middle layer, and do not write and read files), but it occupies near 10GB Gpus memory.  
 how funny it is, so do not try to run it unless you really need it.  
 ---  
 # To build CmdT
@@ -97,4 +97,10 @@ I just test this tool in my computer, and the follow is my environment:
 * NVIDIA RTX A4000  
 ---
 # References  
-* 
+* cmdline: https://github.com/tanakh/cmdline  
+* sion: https://github.com/zanllp/sion  
+* dictionary: https://github.com/1eez/103976  
+* Encryptor: https://github.com/universetraveller/simpleEncryptAlgorithm/
+* Virtual-terminal: https://docs.microsoft.com/zh-cn/windows/console/console-virtual-terminal-sequences  
+* Winget: https://github.com/microsoft/winget-cli  
+* some tips from stack overflow and microsoft-windows-api  
