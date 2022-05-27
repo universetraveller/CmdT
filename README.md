@@ -57,6 +57,8 @@ The editor support 3 modes and 2 commands now, which are the simplified ver of v
 > the editor does not support Syntax-highligh now for its substrate structure, if want to a syntax highlight demo, define __HIGHLIGHT__ in Editor.cpp (also have bug)  
 > the cursor would get incorrect moving when the text includes full-angle characters for its implementation default is the chars are single byte.  
 > Notice that the Chinese text must be UTF-8 rather than ANSI  
+> For the version implementation does not set the buffer size and the terminal size, when the single-line text is longer than the current terminal window and wraps, the cursor moving also gets mistake.  
+> Also, for I do not set the buffer and terminal size, when change the terminal window's size, the editor does not refresh the size of itself but maintains the original size.  
 ## Translator  
 usage: `ct --ts <text>` or `ct -t <text>` with online mode, `ct --dic <text>` or `ct -T <text>` with offline mode.  
 If your computer has no internet-connection, the online mode would switch to offline automatically.  
