@@ -60,7 +60,7 @@ The editor support 3 modes and 2 commands now, which are the simplified ver of v
 > For the version implementation does not set the buffer size and the terminal size, when the single-line text is longer than the current terminal window and wraps, the cursor moving also gets mistake.  
 > Also, for I do not set the buffer and terminal size, when the terminal window's size is changed, the editor does not refresh the size of itself but maintains the original size.  
 ## Translator  
-usage: `ct --ts <text>` or `ct -t <text>` with online mode, `ct --dic <text>` or `ct -T <text>` with offline mode.  
+usage: `ct --ts <text>` or `ct -t <text>` with online mode, `ct --dts <text>` or `ct -T <text>` with offline mode.  
 v1.0.2: `ct --dic` or `ct -D` to get constant offline translation.  
 If your computer has no internet-connection, the online mode would switch to offline automatically.  
 Notice that the offline mode only support English to Chinese and single word.  
