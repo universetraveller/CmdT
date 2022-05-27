@@ -61,7 +61,7 @@ The editor support 3 modes and 2 commands now, which are the simplified ver of v
 usage: `ct --ts <text>` or `ct -t <text>` with online mode, `ct --dic <text>` or `ct -T <text>` with offline mode.  
 If your computer has no internet-connection, the online mode would switch to offline automatically.  
 Notice that the offline mode only support English to Chinese and single word.  
-Use /exit and /clear in offline mode to control the screen buffer.  
+Use `/exit` and `/clear` in offline mode to control the screen buffer.  
 ## Private Diary  
 usage: `ct --diary` or `ct -d` to enter this mode, then follow the guidance in the screen.  
 If you do not have your private user account, it will create one for you.  
